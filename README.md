@@ -26,6 +26,7 @@ This repository presents the complete Telecom CDR pipeline exactly in the same o
 - Fact: `FACT_CALL`
 
 ### Architecture images
+![Physical Model 1](Architecture_Diagrams/from_doc/architecture_05.png)
 ![Physical Model 2](Architecture_Diagrams/from_doc/architecture_06.png)
 
 ## 2) Workflow (Same as Document)
@@ -39,6 +40,7 @@ This repository presents the complete Telecom CDR pipeline exactly in the same o
 - Dashboard reporting
 
 ### Workflow images
+![Workflow (Document Screenshot)](Architecture_Diagrams/workflow_end_to_end.png)
 ![Workflow 1](IICS_Mappings_and_Workflows/from_doc/iics_mapping_workflow_16.png)
 ![Workflow 2](IICS_Mappings_and_Workflows/from_doc/iics_mapping_workflow_24.jpeg)
 
@@ -151,3 +153,13 @@ Telecom customer attributes (plan, segment, profile) change over time. SCD Type 
 5. `SQL_Scripts/02_scd2_dim_customer_logic.sql`
 6. `SQL_Scripts/04_kpi_queries.sql`
 
+## How To Add Images In README
+
+1. Keep images in the correct stage folder.
+2. Use markdown format:
+
+```md
+![Image Title](folder_name/image_name.png)
+```
+
+3. Commit and push. GitHub automatically displays the images in the README page.
