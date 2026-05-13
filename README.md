@@ -26,7 +26,6 @@ This repository presents the complete Telecom CDR pipeline exactly in the same o
 - Fact: `FACT_CALL`
 
 ### Architecture images
-![Physical Model 1](Architecture_Diagrams/from_doc/architecture_05.png)
 ![Physical Model 2](Architecture_Diagrams/from_doc/architecture_06.png)
 
 ## 2) Workflow (Same as Document)
@@ -41,8 +40,6 @@ This repository presents the complete Telecom CDR pipeline exactly in the same o
 
 ### Workflow images
 ![Workflow (Document Screenshot)](Architecture_Diagrams/workflow_end_to_end.png)
-![Workflow 1](IICS_Mappings_and_Workflows/from_doc/iics_mapping_workflow_16.png)
-![Workflow 2](IICS_Mappings_and_Workflows/from_doc/iics_mapping_workflow_24.jpeg)
 
 ## 3) Staging Raw Tables
 
