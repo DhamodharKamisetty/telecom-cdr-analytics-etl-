@@ -152,13 +152,3 @@ Telecom customer attributes (plan, segment, profile) change over time. SCD Type 
 5. `SQL_Scripts/02_scd2_dim_customer_logic.sql`
 6. `SQL_Scripts/04_kpi_queries.sql`
 
-## How To Add Images In README
-
-1. Keep images in the correct stage folder.
-2. Use markdown format:
-
-```md
-![Image Title](folder_name/image_name.png)
-```
-
-3. Commit and push. GitHub automatically displays the images in the README page.
