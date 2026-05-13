@@ -1,4 +1,4 @@
-# Telecom CDR Analytics ETL Project
+# Telecom CDR Analytics and Cloud Integration ETL Project
 
 This repository presents the complete Telecom CDR pipeline exactly in the same order as the project document, so a recruiter can understand business goal, data flow, ETL logic, SCD Type 2 handling, KPI generation, and final reports in one read.
 
