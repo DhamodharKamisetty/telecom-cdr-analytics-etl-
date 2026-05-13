@@ -1,120 +1,136 @@
-# Telecom CDR Analytics ETL Project
+# Telecom CDR Analytics - Ordered End-to-End Project
 
-End-to-end telecom Call Detail Record (CDR) analytics pipeline using a dimensional model, Informatica IICS mappings, and KPI-driven reporting dashboards.
+This repository is organized in exact implementation order:
 
-## Project Objective
+1. Dimension tables + mapping + SQL
+2. Raw table cleansing
+3. Staging
+4. Fact table creation
+5. KPI queries
+6. Dashboard reporting
 
-Build a production-style ETL and analytics solution that:
-
-- Ingests and cleanses telecom CDR data
-- Loads a Star Schema (Fact + Dimensions)
-- Implements SCD Type 2 logic for historical tracking
-- Generates business KPIs for operations and revenue monitoring
-
-## Repository Structure
+## Folder Structure
 
 ```text
 project1/
 |-- SQL_Scripts/
+|   |-- 00_raw_and_staging_tables.sql
+|   |-- 01_cleansing_logic.sql
+|   |-- 02_dimension_tables.sql
+|   |-- 03_fact_table_creation.sql
+|   `-- 04_kpi_queries.sql
+|-- Project_Flow_Ordered/
+|   |-- 01_Dimensions_Mapping_and_SQL/
+|   |-- 02_Raw_Table_Cleansing/
+|   |-- 03_Staging_Load/
+|   |-- 04_Fact_Table_Creation/
+|   |-- 05_KPIs/
+|   `-- 06_Dashboard_Reports/
 |-- IICS_Mappings_and_Workflows/
 |-- Architecture_Diagrams/
 |-- BI_Dashboards/
-|-- Document_Extracted_Assets/
 `-- README.md
 ```
 
-## Technology Stack
+## Step 1 - Dimension Tables + Mapping + SQL
 
-- **ETL:** Informatica Intelligent Cloud Services (IICS)
-- **Data Modeling:** Star Schema (Fact/Dimension)
-- **Database:** Relational warehouse target
-- **Reporting:** BI dashboards (charts and KPI views)
+### What is done
+- Designed star schema dimensions: `DIM_CUSTOMER`, `DIM_TIME`, `DIM_TOWER`, `DIM_CALL_TYPE`
+- Collected mapping/diagram screenshots for dimension flow
+- Added SQL for creating all dimension tables
 
-## Data Model (Star Schema)
+### SQL file
+- `SQL_Scripts/02_dimension_tables.sql`
 
-Core model includes:
+### Images
+![Dimension and Mapping 1](Project_Flow_Ordered/01_Dimensions_Mapping_and_SQL/01_dimensions_mapping_and_sql_01.jpeg)
+![Dimension and Mapping 2](Project_Flow_Ordered/01_Dimensions_Mapping_and_SQL/01_dimensions_mapping_and_sql_05.png)
 
-- `FACT_CALL`
-- `DIM_CUSTOMER`
-- `DIM_TIME`
-- `DIM_TOWER`
-- `DIM_CALL_TYPE`
+## Step 2 - Cleansing for Raw Table
 
-### Physical Data Model
+### What is done
+- Cleaned mixed datatype fields from raw CDR source
+- Standardized timestamps, call type, duration, revenue
+- Created clean staging-ready data
 
-The diagrams from your project document were extracted and organized. Highlight image:
+### SQL file
+- `SQL_Scripts/01_cleansing_logic.sql`
 
-![Physical Data Model](Architecture_Diagrams/from_doc/architecture_05.png)
+### Images
+![Raw Cleansing 1](Project_Flow_Ordered/02_Raw_Table_Cleansing/02_raw_table_cleansing_13.jpeg)
+![Raw Cleansing 2](Project_Flow_Ordered/02_Raw_Table_Cleansing/02_raw_table_cleansing_16.png)
 
-## ETL Workflow (IICS)
+## Step 3 - Staging Layer
 
-Pipeline stages:
+### What is done
+- Created raw and staging tables
+- Loaded cleansed records into staging schema
+- Prepared keys/columns for dimensional loading
 
-1. **Source ingestion** of CDR records
-2. **Standardization and cleansing**
-3. **Dimension loading** with surrogate keys
-4. **SCD Type 2 processing** for historical changes
-5. **Fact table loading** and KPI-ready outputs
+### SQL file
+- `SQL_Scripts/00_raw_and_staging_tables.sql`
 
-### SCD Type 2 Mapping Logic (Router + Expression + Insert/Update)
+### Images
+![Staging 1](Project_Flow_Ordered/03_Staging_Load/03_staging_load_19.jpeg)
+![Staging 2](Project_Flow_Ordered/03_Staging_Load/03_staging_load_24.jpeg)
 
-![SCD Type 2 Logic](IICS_Mappings_and_Workflows/from_doc/iics_mapping_workflow_16.png)
+## Step 4 - Fact Table Creation
 
-### Mapping / Workflow Overview
+### What is done
+- Built `FACT_CALL` with FK links to all dimensions
+- Added measures: duration, revenue, international flag, call count
+- Ready for KPI aggregation
 
-![IICS Mapping Overview](IICS_Mappings_and_Workflows/from_doc/iics_mapping_workflow_24.jpeg)
+### SQL file
+- `SQL_Scripts/03_fact_table_creation.sql`
 
-## KPI Implementation
+### Images
+![Fact Table 1](Project_Flow_Ordered/04_Fact_Table_Creation/04_fact_table_creation_25.jpeg)
+![Fact Table 2](Project_Flow_Ordered/04_Fact_Table_Creation/04_fact_table_creation_30.jpeg)
 
-Key KPIs produced by SQL and ETL outputs:
+## Step 5 - KPI Queries
 
-- Daily Call Volume
-- Revenue by customer/call type/time window
-- International Call Monitoring
-- Additional operational alerts/notifications
+### What is done
+- KPI 1: Daily Call Volume
+- KPI 2: Call Type Performance
+- KPI 3: International Call Monitoring
+- KPI 4: Revenue Data
 
-Implemented SQL scripts:
+### SQL file
+- `SQL_Scripts/04_kpi_queries.sql`
 
-- `SQL_Scripts/01_create_star_schema.sql`
-- `SQL_Scripts/02_scd2_dim_customer_logic.sql`
-- `SQL_Scripts/03_kpi_queries.sql`
+### Images
+![KPI 1](Project_Flow_Ordered/05_KPIs/05_kpis_31.jpeg)
+![KPI 2](Project_Flow_Ordered/05_KPIs/05_kpis_36.png)
 
-## Dashboard Outputs
+## Step 6 - Dashboard Reports
 
-### Daily Call Volume
+### What is done
+- Built recruiter-friendly final dashboard visuals
+- Included call volume, revenue, and international call insight charts
 
-![Daily Call Volume](BI_Dashboards/from_doc/bi_dashboard_or_sql_31.jpeg)
+### Images
+![Dashboard 1](Project_Flow_Ordered/06_Dashboard_Reports/06_dashboard_reports_40.png)
+![Dashboard 2](Project_Flow_Ordered/06_Dashboard_Reports/06_dashboard_reports_43.png)
 
-### Revenue Analysis
+## How To Apply Images In README (Important)
 
-![Revenue Analysis](BI_Dashboards/from_doc/bi_dashboard_or_sql_40.png)
+1. Put image file in the correct folder, for example:
+   - `Project_Flow_Ordered/04_Fact_Table_Creation/my_fact_image.png`
+2. Use markdown image syntax in `README.md`:
 
-### International Call Monitoring
+```md
+![Fact Table Mapping](Project_Flow_Ordered/04_Fact_Table_Creation/my_fact_image.png)
+```
 
-![International Call Monitoring](BI_Dashboards/from_doc/bi_dashboard_or_sql_41.jpeg)
+3. Commit and push. GitHub automatically renders the image in the repository front page.
 
-### KPI Dashboard Overview
+## Execution Order Summary
 
-![KPI Dashboard](BI_Dashboards/from_doc/bi_dashboard_or_sql_43.png)
+- Run `00_raw_and_staging_tables.sql`
+- Run `01_cleansing_logic.sql`
+- Run `02_dimension_tables.sql`
+- Run `03_fact_table_creation.sql`
+- Run `04_kpi_queries.sql`
 
-## Current Workspace Notes
-
-This repository now includes:
-
-- Extracted content from your project document (`Document_Extracted_Assets`)
-- Split visual assets into architecture, mapping/workflow, and dashboard folders
-- SQL scripts for star schema DDL, SCD Type 2 logic, and KPIs
-
-## How to Run / Validate
-
-1. Deploy or import mappings/workflows into IICS
-2. Execute staging -> dimensions -> fact load sequence
-3. Run KPI SQL queries
-4. Validate dashboard values against SQL output
-
-## Recruiter Highlights
-
-- Enterprise-style folder organization
-- Dimensional modeling with clear PK/FK design
-- SCD Type 2 history handling in ETL
-- KPI-to-dashboard traceability from source to insight
+This sequence exactly matches the project flow and screenshots.
