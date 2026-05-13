@@ -1,0 +1,109 @@
+INFORMATICA INTELLIGENCE CLOUD SERVICE
+DATA MODELLING DESIGN
+TEAM: RUNTIME REBELS
+SCENARIO: This pipeline helps telecom teams analyze customer usage, detect high usage, and process daily call data automatically.
+Conceptual Data Model
+ Identify core entities
+ Define relationship
+Core entities:1 dim_cust                       2   dim_time                  3 dim_tower                        4   dim_calltype
+Relationships:
+DIMDIMFACTFACT
+DIM
+DIM
+FACT
+FACT
+|──────             ───────<
+2. Logical Data Modelling            Define tables + columnsFACT TABLE: FACT_CALL
+Columns:
+Call_ID (PK)
+Customer_Key (FK)
+Tower_Key (FK)
+Time_Key (FK)
+CallType_Key (FK)
+Duration
+Revenue
+Is_International
+3. Physical Data Modelling         Actual tables in database          Column data types          Constraints (PK, FK, NOT NULL, UNIQUE)
+WORKFLOW
+SOURCE TABLES WITH UNCLEANED DATA AND MIXED TYPES SOURCE TABLES WITH UNCLEANED DATA AND MIXED TYPES RAW DATA TABLESRAW DATA TABLES
+SOURCE TABLES WITH UNCLEANED DATA AND MIXED TYPES
+SOURCE TABLES WITH UNCLEANED DATA AND MIXED TYPES
+RAW DATA TABLES
+RAW DATA TABLES
+LOAD DATALOAD DATADIM_timeDIM_timeETL: STAR SCHEMA TRANSFORMATIONLookup Surrogate Keys from DIMs, Join Cleansed Tables. , Aggregate Measures & Metrics.ETL: STAR SCHEMA TRANSFORMATIONLookup Surrogate Keys from DIMs, Join Cleansed Tables. , Aggregate Measures & Metrics.Fact callFact callDIM_custDIM_custTECHNICAL STAGING & KEY SETUPGenerate Sequences: Initialize IICS SEQ for future Surrogate Keys .KPI Identification: Isolate Measures (Facts) from Attributes (Dims)TECHNICAL STAGING & KEY SETUPGenerate Sequences: Initialize IICS SEQ for future Surrogate Keys .KPI Identification: Isolate Measures (Facts) from Attributes (Dims)ORACLE – STAGING AREAORACLE – STAGING AREA
+LOAD DATA
+LOAD DATA
+DIM_time
+DIM_time
+ETL: STAR SCHEMA TRANSFORMATION
+Lookup Surrogate Keys from DIMs, Join Cleansed Tables. , Aggregate Measures & Metrics.
+ETL: STAR SCHEMA TRANSFORMATION
+Lookup Surrogate Keys from DIMs, Join Cleansed Tables. , Aggregate Measures & Metrics.
+Fact call
+Fact call
+DIM_cust
+DIM_cust
+TECHNICAL STAGING & KEY SETUP
+Generate Sequences: Initialize IICS SEQ for future Surrogate Keys .KPI Identification: Isolate Measures (Facts) from Attributes (Dims)
+TECHNICAL STAGING & KEY SETUP
+Generate Sequences: Initialize IICS SEQ for future Surrogate Keys .KPI Identification: Isolate Measures (Facts) from Attributes (Dims)
+ORACLE – STAGING AREA
+ORACLE – STAGING AREA
+DIM_calltypeDIM_calltype
+DIM_calltype
+DIM_calltype
+CLEANING AND DIMESNSION LOADING[Sidebars are great for calling out important points from your text or adding additional info for quick reference, such as a schedule.They are typically placed on the left, right, top or bottom of the page. But you can easily drag them to any position you prefer.When you’re ready to add your content, just click here and start typing.]CLEANING AND DIMESNSION LOADING[Sidebars are great for calling out important points from your text or adding additional info for quick reference, such as a schedule.They are typically placed on the left, right, top or bottom of the page. But you can easily drag them to any position you prefer.When you’re ready to add your content, just click here and start typing.]
+CLEANING AND DIMESNSION LOADING
+[Sidebars are great for calling out important points from your text or adding additional info for quick reference, such as a schedule.
+They are typically placed on the left, right, top or bottom of the page. But you can easily drag them to any position you prefer.
+When you’re ready to add your content, just click here and start typing.]
+CLEANING AND DIMESNSION LOADING
+[Sidebars are great for calling out important points from your text or adding additional info for quick reference, such as a schedule.
+They are typically placed on the left, right, top or bottom of the page. But you can easily drag them to any position you prefer.
+When you’re ready to add your content, just click here and start typing.]
+DIM_towerDIM_tower
+DIM_tower
+DIM_tower
+FINAL WAREHOUSE LOADINGBatch Load to Production Schema., Rebuild Indexes & Constraints.FINAL WAREHOUSE LOADINGBatch Load to Production Schema., Rebuild Indexes & Constraints.OLTP SYSTEMOLTP SYSTEM
+FINAL WAREHOUSE LOADING
+Batch Load to Production Schema., Rebuild Indexes & Constraints.
+FINAL WAREHOUSE LOADING
+Batch Load to Production Schema., Rebuild Indexes & Constraints.
+OLTP SYSTEM
+OLTP SYSTEM
+DATAMART1.DAILY CALLVOLUME SUMMARY2.CALLTYPE PERFORMANCE ANYSIS3.INTERNATIONAL CALL MONITORING4..REVENUE DATADATAMART1.DAILY CALLVOLUME SUMMARY2.CALLTYPE PERFORMANCE ANYSIS3.INTERNATIONAL CALL MONITORING4..REVENUE DATASelect required business-specific data from Data WarehouseSelect required business-specific data from Data WarehouseDATA WAREHOUSE DATA WAREHOUSE
+DATAMART1.DAILY CALLVOLUME SUMMARY
+2.CALLTYPE PERFORMANCE ANYSIS
+3.INTERNATIONAL CALL MONITORING
+4..REVENUE DATA
+DATAMART1.DAILY CALLVOLUME SUMMARY
+2.CALLTYPE PERFORMANCE ANYSIS
+3.INTERNATIONAL CALL MONITORING
+4..REVENUE DATA
+Select required business-specific data from Data Warehouse
+Select required business-specific data from Data Warehouse
+DATA WAREHOUSE
+DATA WAREHOUSE
+BI TOOLS / REPORTINGGenerate dashboards, reports, and visualizationsBI TOOLS / REPORTINGGenerate dashboards, reports, and visualizationsOLAP SYSTEMOLAP SYSTEM
+BI TOOLS / REPORTINGGenerate dashboards, reports, and visualizations
+BI TOOLS / REPORTINGGenerate dashboards, reports, and visualizations
+OLAP SYSTEM
+OLAP SYSTEM
+STAGING RAW TABLES:
+CLEANING:
+DIM_TABLES:
+DIM_TIME:
+DIM_CUSTOMER:
+DIM_TOWER:
+DIM_CALLTYPE:
+FACT_TABLE:
+SCDTYPE2 – DIM_CUSTOMER
+KPI 1: DAILY CALL VALUE SUMMARY
+KPI 2 : CALLTYPE PERFORMANCE ANALYSER
+KPI 3: INTERNATIONAL CALL MONITORING
+KPI 4: REVENUE DATA
+KPI REPORTINGS:
+KPI 1:
+KPI 2:
+KPI 3:
+KPI 4:

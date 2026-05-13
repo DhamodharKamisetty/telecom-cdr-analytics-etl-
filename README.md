@@ -19,6 +19,7 @@ project1/
 |-- IICS_Mappings_and_Workflows/
 |-- Architecture_Diagrams/
 |-- BI_Dashboards/
+|-- Document_Extracted_Assets/
 `-- README.md
 ```
 
@@ -41,9 +42,9 @@ Core model includes:
 
 ### Physical Data Model
 
-> Add your model image at `Architecture_Diagrams/physical_data_model_star_schema.png`
+The diagrams from your project document were extracted and organized. Highlight image:
 
-![Physical Data Model](Architecture_Diagrams/physical_data_model_star_schema.png)
+![Physical Data Model](Architecture_Diagrams/from_doc/architecture_05.png)
 
 ## ETL Workflow (IICS)
 
@@ -57,15 +58,11 @@ Pipeline stages:
 
 ### SCD Type 2 Mapping Logic (Router + Expression + Insert/Update)
 
-> Add your implementation screenshot at `IICS_Mappings_and_Workflows/iics_scd2_router_expression_logic.png`
-
-![SCD Type 2 Logic](IICS_Mappings_and_Workflows/iics_scd2_router_expression_logic.png)
+![SCD Type 2 Logic](IICS_Mappings_and_Workflows/from_doc/iics_mapping_workflow_16.png)
 
 ### Mapping / Workflow Overview
 
-> Add your mapping screenshot at `IICS_Mappings_and_Workflows/iics_mapping_overview.png`
-
-![IICS Mapping Overview](IICS_Mappings_and_Workflows/iics_mapping_overview.png)
+![IICS Mapping Overview](IICS_Mappings_and_Workflows/from_doc/iics_mapping_workflow_24.jpeg)
 
 ## KPI Implementation
 
@@ -76,33 +73,37 @@ Key KPIs produced by SQL and ETL outputs:
 - International Call Monitoring
 - Additional operational alerts/notifications
 
-Store SQL in:
+Implemented SQL scripts:
 
-- `SQL_Scripts/01_create_dimensions.sql`
-- `SQL_Scripts/02_create_fact.sql`
+- `SQL_Scripts/01_create_star_schema.sql`
+- `SQL_Scripts/02_scd2_dim_customer_logic.sql`
 - `SQL_Scripts/03_kpi_queries.sql`
 
 ## Dashboard Outputs
 
 ### Daily Call Volume
 
-![Daily Call Volume](BI_Dashboards/daily_call_volume.png)
+![Daily Call Volume](BI_Dashboards/from_doc/bi_dashboard_or_sql_31.jpeg)
 
 ### Revenue Analysis
 
-![Revenue Analysis](BI_Dashboards/revenue_analysis.png)
+![Revenue Analysis](BI_Dashboards/from_doc/bi_dashboard_or_sql_40.png)
 
 ### International Call Monitoring
 
-![International Call Monitoring](BI_Dashboards/international_call_monitoring.png)
+![International Call Monitoring](BI_Dashboards/from_doc/bi_dashboard_or_sql_41.jpeg)
 
 ### KPI Dashboard Overview
 
-![KPI Dashboard](BI_Dashboards/kpi_dashboard_overview.png)
+![KPI Dashboard](BI_Dashboards/from_doc/bi_dashboard_or_sql_43.png)
 
 ## Current Workspace Notes
 
-This workspace already contains IICS export metadata from earlier development. You can keep those exports for traceability and additionally place recruiter-facing screenshots/scripts in the structured folders above.
+This repository now includes:
+
+- Extracted content from your project document (`Document_Extracted_Assets`)
+- Split visual assets into architecture, mapping/workflow, and dashboard folders
+- SQL scripts for star schema DDL, SCD Type 2 logic, and KPIs
 
 ## How to Run / Validate
 

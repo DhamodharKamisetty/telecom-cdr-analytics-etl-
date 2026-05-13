@@ -1,0 +1,46 @@
+-- Telecom CDR Analytics - SCD Type 2 for DIM_CUSTOMER
+-- Assumes staging table: STG_CUSTOMER(customer_id, customer_name, customer_segment, plan_name, load_ts)
+
+-- 1) Expire old active rows that changed
+UPDATE DIM_CUSTOMER D
+SET
+    D.EFFECTIVE_TO_DT = TRUNC(SYSDATE) - 1,
+    D.IS_CURRENT = 'N'
+WHERE D.IS_CURRENT = 'Y'
+  AND EXISTS (
+      SELECT 1
+      FROM STG_CUSTOMER S
+      WHERE S.CUSTOMER_ID = D.CUSTOMER_ID
+        AND (
+            NVL(S.CUSTOMER_NAME, 'NA') <> NVL(D.CUSTOMER_NAME, 'NA')
+            OR NVL(S.CUSTOMER_SEGMENT, 'NA') <> NVL(D.CUSTOMER_SEGMENT, 'NA')
+            OR NVL(S.PLAN_NAME, 'NA') <> NVL(D.PLAN_NAME, 'NA')
+        )
+  );
+
+-- 2) Insert brand-new customers and changed versions
+INSERT INTO DIM_CUSTOMER (
+    CUSTOMER_ID,
+    CUSTOMER_NAME,
+    CUSTOMER_SEGMENT,
+    PLAN_NAME,
+    EFFECTIVE_FROM_DT,
+    EFFECTIVE_TO_DT,
+    IS_CURRENT
+)
+SELECT
+    S.CUSTOMER_ID,
+    S.CUSTOMER_NAME,
+    S.CUSTOMER_SEGMENT,
+    S.PLAN_NAME,
+    TRUNC(SYSDATE) AS EFFECTIVE_FROM_DT,
+    DATE '9999-12-31' AS EFFECTIVE_TO_DT,
+    'Y' AS IS_CURRENT
+FROM STG_CUSTOMER S
+LEFT JOIN DIM_CUSTOMER D
+    ON D.CUSTOMER_ID = S.CUSTOMER_ID
+   AND D.IS_CURRENT = 'Y'
+WHERE D.CUSTOMER_ID IS NULL
+   OR NVL(S.CUSTOMER_NAME, 'NA') <> NVL(D.CUSTOMER_NAME, 'NA')
+   OR NVL(S.CUSTOMER_SEGMENT, 'NA') <> NVL(D.CUSTOMER_SEGMENT, 'NA')
+   OR NVL(S.PLAN_NAME, 'NA') <> NVL(D.PLAN_NAME, 'NA');
