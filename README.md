@@ -1,6 +1,6 @@
 # Telecom CDR Analytics and Cloud Integration ETL Project
 
-This repository presents the complete Telecom CDR pipeline exactly in the same order as the project document, so a recruiter can understand business goal, data flow, ETL logic, SCD Type 2 handling, KPI generation, and final reports in one read.
+An end-to-end Data Engineering pipeline that transforms raw Telecom Call Detail Records (CDR) into actionable business insights. This project demonstrates complex ETL workflows, including Data Cleansing, SCD Type 2 history tracking, and Star Schema modeling on a cloud-integrated platform.
 
 ## Project Flow (Document Order)
 
