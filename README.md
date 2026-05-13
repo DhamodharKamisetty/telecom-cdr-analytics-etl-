@@ -26,7 +26,6 @@ This repository presents the complete Telecom CDR pipeline exactly in the same o
 - Fact: `FACT_CALL`
 
 ### Architecture images
-![Physical Model 1](Architecture_Diagrams/from_doc/architecture_05.png)
 ![Physical Model 2](Architecture_Diagrams/from_doc/architecture_06.png)
 
 ## 2) Workflow (Same as Document)
