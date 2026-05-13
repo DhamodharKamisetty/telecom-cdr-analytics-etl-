@@ -1,0 +1,126 @@
+{
+  "name" : "dim_time-1777344524714",
+  "sourceOrgId" : "arTpXwAyXvbiqm9KsejSCD",
+  "sourceOrgName" : "SIMATS",
+  "exportedObjects" : [ {
+    "objectGuid" : "91CQ8thTDYkly4Ibvn0sWB",
+    "objectName" : "HCL_DB(YCK)",
+    "objectType" : "Connection",
+    "path" : "/SYS",
+    "providerName" : null,
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0139HO0B00000000000A"
+      },
+      "objectRefs" : [ "592yn9H895fcdEitOKZqYd" ],
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    }
+  }, {
+    "objectGuid" : "dRGaUFiXAq3jZYQRJI6ZcJ",
+    "objectName" : "FF_HCL_SOURCE",
+    "objectType" : "Connection",
+    "path" : "/SYS",
+    "providerName" : null,
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0139HO0B00000000000M"
+      },
+      "objectRefs" : [ "592yn9H895fcdEitOKZqYd" ],
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    }
+  }, {
+    "objectGuid" : "592yn9H895fcdEitOKZqYd",
+    "objectName" : "ChaituChowdary",
+    "objectType" : "AgentGroup",
+    "path" : "/SYS",
+    "providerName" : null,
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0139HO25000000000002"
+      },
+      "objectRefs" : [ ],
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "iewBmaL290wj2WtdVLunkl",
+    "objectName" : "dim_time",
+    "objectType" : "DTEMPLATE",
+    "path" : "/Explore/HACKATHON",
+    "providerName" : null,
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0139HO1700000000002A"
+      },
+      "objectRefs" : [ "91CQ8thTDYkly4Ibvn0sWB", "dRGaUFiXAq3jZYQRJI6ZcJ" ],
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "aJBDGtELxywkJwaWN3C763",
+    "objectName" : "HACKATHON",
+    "objectType" : "Project",
+    "path" : "/Explore",
+    "providerName" : null,
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "objectRefs" : [ ],
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  } ]
+}

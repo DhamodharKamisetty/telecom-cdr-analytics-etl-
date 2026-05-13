@@ -1,0 +1,108 @@
+Delivered-To: jayajay88193@gmail.com
+Received: by 2002:a05:7010:c695:b0:515:5024:eabe with SMTP id it21csp4240876mdb;
+        Mon, 27 Apr 2026 04:23:27 -0700 (PDT)
+X-Received: by 2002:a05:620a:17a3:b0:8ee:e011:a77a with SMTP id af79cd13be357-8eee011add0mr3638719085a.13.1777289006948;
+        Mon, 27 Apr 2026 04:23:26 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1777289006; cv=none;
+        d=google.com; s=arc-20240605;
+        b=kMxtSvdfPQG5vHZF2hUYP+efixwVKku8XJ3bIamQ4KTF9IoIpIEnoG9vojgjg8GVwa
+         l/DXaPCjZLtJNnElUnrF7aHZUfI+wEKHMWyEsi+0+3SJwxuqbMYXlgdtyp/0z8AwxTuz
+         ZyTxkR4BKKw+Acx5VEbQSe+ACO//TIkutxd4euDmYdHdgQebnE+C93xnHWa9ACnccljT
+         KmKwSqiDDKhMMPgcCyNjzIcbIIoF9hyKs6fLaPuQfAVtm2+8I59qJ3DUwPFwXD5BZijU
+         3hydGoUa4lMVxBEtPvWdfQ7RMUf1MS3l7nE17OJwE3Tb2woc4sFwn8BZAJFXyZRPUdb8
+         nrlA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:mime-version:subject:message-id:cc:from:date:dkim-signature
+         :dkim-signature;
+        bh=o5o5aySF+B6w5tSW/Cn2rxt3pmcPRPbXvaBqxs4d1kg=;
+        fh=EGVlbaLDChLY5d6m+Sxo6mzVAU5vcGJVa1jX1LxxgQE=;
+        b=Ng9a6Vj7VwNstNzQC/NmzsAysqlDxAxby00gugbwT2jskAqu0BIOg3pzgcPiFXb7Pt
+         6+ht9UJHcCLLlqajs0ctrdrAd3n+NDr3QV2IENWI9o+cHkXqpUyL81XfbMfkbJ74gLcb
+         SmXm1uvHKCS74tnjJAonU+nR4OQ9HxCTSAjCNIKr5YCMjck29IBsfTUBdJffMumIG1VF
+         P9/wPhLvRNm0VVE4kKaaaVqRpLmrgvFnpEjXkICeS184EnOzU2P24Qw1tavHK/p3yw2F
+         hl9p5KNUZwokK+79dQC7PyUuZ1WvqgralyX3jqhaLpA6A+o9sLDOxr/w/1jE1aY4ifuw
+         6yfg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@informaticacloud.com header.s=s1 header.b=tw86PT3C;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=fkQHbeB0;
+       spf=pass (google.com: domain of bounces+4468436-0ad7-jayajay88193=gmail.com@mail.informaticacloud.com designates 168.245.56.167 as permitted sender) smtp.mailfrom="bounces+4468436-0ad7-jayajay88193=gmail.com@mail.informaticacloud.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=informaticacloud.com
+Return-Path: <bounces+4468436-0ad7-jayajay88193=gmail.com@mail.informaticacloud.com>
+Received: from o2.mail.informaticacloud.com (o2.mail.informaticacloud.com. [168.245.56.167])
+        by mx.google.com with ESMTPS id af79cd13be357-8eb0eef7191si2457083685a.145.2026.04.27.04.23.26
+        for <jayajay88193@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 27 Apr 2026 04:23:26 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+4468436-0ad7-jayajay88193=gmail.com@mail.informaticacloud.com designates 168.245.56.167 as permitted sender) client-ip=168.245.56.167;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@informaticacloud.com header.s=s1 header.b=tw86PT3C;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=fkQHbeB0;
+       spf=pass (google.com: domain of bounces+4468436-0ad7-jayajay88193=gmail.com@mail.informaticacloud.com designates 168.245.56.167 as permitted sender) smtp.mailfrom="bounces+4468436-0ad7-jayajay88193=gmail.com@mail.informaticacloud.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=informaticacloud.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=informaticacloud.com;
+	h=date:from:cc:subject:mime-version:to:content-type:cc:content-type:
+	date:feedback-id:from:subject:to;
+	s=s1; t=1777289006; bh=o5o5aySF+B6w5tSW/Cn2rxt3pmcPRPbXvaBqxs4d1kg=;
+	b=tw86PT3CPd8TOe0A5mAWfZOBx505cq+4wZJWY6hHcpxGKaeYeBNGdJ3EMd3b1lv/whB2
+	FNAF7ITrEETTdRzQwdUbPjE0DLRxYa4k3sDpfaWJanmZ7gbm6Wy76fxWZ1S04OQrjEtsf1
+	gDpTpAssKA1QI8mxAKFHztl956k+9dbHvydL3org1RdkutufoSMEmKDrRlbhkpMbjd3s+J
+	ChfJ4iijU0UfLP61xMhINTDo4W/9Mo2NzhuUVy5PrYXHGRB/AwZui/fOYR2k8NfP23KcOm
+	j3/35uIAUiCOhm35hINKMOtFOPquPmyVOi/fS4bqgjuaE8CD+lnMSbf+dtZiIqEQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=date:from:cc:subject:mime-version:to:content-type:cc:content-type:
+	date:feedback-id:from:subject:to;
+	s=smtpapi; t=1777289006; bh=o5o5aySF+B6w5tSW/Cn2rxt3pmcPRPbXvaBqxs4d1kg=;
+	b=fkQHbeB0rxekaNifYOcbLRgR+XAnBrj26XPUzwU4qSNvNsiXSOv8fvwKOcnapynUVtf/
+	Y1c2+C+JbLFQ38BIhWF2DsnS2P2mp6+R3nArpRKMex6dJ9q2jAg9MuEYPvtSDGKryVWtbA
+	fUn3Z8GUjbTpEAjepIG4PpzAigWK5UHww=
+Received: by recvd-5d54cfbfdf-76k6n with SMTP id recvd-5d54cfbfdf-76k6n-1-69EF472E-46
+	2026-04-27 11:23:26.349458007 +0000 UTC m=+480837.139458212
+Received: from localhost.localdomain (unknown)
+	by geopod-ismtpd-6 (SG)
+	with ESMTP id 4P65EwcdRsyTDmyIgsF1dw
+	for <jayajay88193@gmail.com>;
+	Mon, 27 Apr 2026 11:23:26.005 +0000 (UTC)
+Received: from [::1] (ip-10-166-166-111.ap-southeast-2.compute.internal [10.166.166.111])
+	by localhost.localdomain (8.14.7/8.14.7) with ESMTP id 63RBNOtJ762459
+	for <jayajay88193@gmail.com>; Mon, 27 Apr 2026 11:23:24 GMT
+Date: Mon, 27 Apr 2026 11:23:26 +0000 (UTC)
+From: admin@informaticacloud.com
+Cc: 
+Message-ID: <1566663981.30372.1777289003723@application-integration-0.application-integration.taskflow-prod-apse1.svc.cluster.local>
+Subject: 
+MIME-Version: 1.0
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EU9cpqY5Olc1m4lkv0GPMcnHvcuLvnySxokAvk78XNlTumnjI3clYqm193?=
+ =?us-ascii?Q?mdcpN=2FRB2WhY=2FBWwfkPz1=2FYEyqOTV=2F0A3wxuOQC?=
+ =?us-ascii?Q?hlX4tNLnSjmDyUF9F0F3bIHUn2JyL9z1Okv5p8E?=
+ =?us-ascii?Q?FgaYTokcomi8r0NCxW=2FXlULh89cV=2F2Fpx8NEZMB?=
+ =?us-ascii?Q?QkE2c4xfbWL1rANiSrCvvq3ctpUv=2FvofZswHJst?=
+ =?us-ascii?Q?Q=3D=3D?=
+To: jayajay88193@gmail.com
+X-Entity-ID: u001.NlNOnlySVZARS3TuA6jbyQ==
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_30371_186543622.1777289003723"
+
+------=_Part_30371_186543622.1777289003723
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+ <p>start time: 2026-04-27T11:23:14.000Z</p>
+<p>failed:0</p>
+<p>success:21</p>
+<p>end time:2026-04-27T11:23:20.000Z</p>
+<p>taskProperties : </p>
+<p>Error_Message :No errors encountered.</p>
+<p>0</p>
+<p>0</p>
+<p>0139HOC10000000000HQ</p>
+<p>MappingTask6</p>
+<p>2</p>
+<p>2026-04-27T11:23:14.000Z</p>
+<p>100</p>
+<p>0139HO0Z00000000001M</p>
+<p>1</p>
+<p>0</p>
+<p></p> 
+------=_Part_30371_186543622.1777289003723--
