@@ -28,7 +28,7 @@ This repository presents the complete Telecom CDR pipeline exactly in the same o
 ### Architecture images
 ![Physical Model 2](Architecture_Diagrams/from_doc/architecture_06.png)
 
-## 2) Workflow (Same as Document)
+## 2) Workflow 
 ![Workflow Overview](IICS_Mappings_and_Workflows/from_doc/Screenshot%202026-05-13%20143948.png)
 ### End-to-end workflow
 - Source raw CDR ingestion
